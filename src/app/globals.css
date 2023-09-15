@@ -3,25 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    --background-color: #26292e;
+    --text-color: #aeaeae;
+    --active-link-color: #fff400;
+    --button-text-color: #fefefe;
+    --button-border-color: #ffffff;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas: 'leftMenu appContent';
+    color: var(--text-color);
+    background: var(--background-color)
+}
+
+.left-menu-container {
+    grid-area: leftMenu;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    grid-area: appContent;
 }
