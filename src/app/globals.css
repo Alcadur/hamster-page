@@ -15,7 +15,8 @@ body {
     grid-template-columns: 100px 1fr;
     grid-template-areas: 'leftMenu appContent';
     color: var(--text-color);
-    background: var(--background-color)
+    background: var(--background-color);
+    padding-top: 10px;
 }
 
 .left-menu-container {
