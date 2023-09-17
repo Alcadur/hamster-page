@@ -47,6 +47,7 @@ const folders = getDirectories(APP_PATH)
     .sort();
 
 const fileContent = `${FIRST_LINE_COMMENT}
+export const INDEX = "/";
 ${folders.map(path => `export const ${generateNameFromPath(path)} = "${path}";`).join('\n')}`;
 
 fs.writeFileSync('./src/config/routes.js', fileContent, { flag: 'w' });
