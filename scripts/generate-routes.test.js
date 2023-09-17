@@ -95,6 +95,61 @@ describe('scripts/generate-routes', function () {
             expect(fileContentLines[4]).toEqual('export const DIR_CCC = "/dir-ccc";');
         });
     });
+
+    describe('nested structure', function () {
+        /**
+         * @param {[string[]]} nestedStructure - [
+         *  ['dir1', 'dir2', ...], - level 0
+         *  ['dir1/dir1.1', 'dir1/dir1.2', ...], - level 1 for dir1
+         *  [], - back to root path like "cd .."
+         *  ['dir2/dir2.1', 'dir2/dir2.2', ...], - level 1 for dir2
+         *  [],
+         *  ..., - reset level 1 dirs
+         *  [...], - level 2 for dir 1 (content of dir1.1)
+         *  ]
+         */
+        function prepare(nestedStructure) {
+            fsMock.readdirSync.mockReturnValue([]);
+
+            nestedStructure.forEach(level => {
+                fsMock.readdirSync.mockReturnValueOnce(level);
+            });
+        }
+
+        it('should correct generate nested routs', function () {
+            const endOfDir = [];
+            const level0 = ['dir1', 'dir2', 'dir3'];
+            const dir1 = ['dir1-1'];
+            const dir2 = ['dir2-1', 'dir2-2', 'dir2-3'];
+            const dir2_1 = ['dir2-1-1'];
+            const dir2_3 = ['dir2-3-1'];
+            const dir3 = ['dir3-1', 'dir3-2'];
+            const dir3_2 = ['dir3-2-1'];
+
+            prepare([
+                level0, dir1, endOfDir, dir2, dir2_1, endOfDir, endOfDir, dir2_3, endOfDir, dir3, endOfDir, dir3_2
+            ]);
+
+            require('./generate-routes');
+
+            const fileContentLines = getWriteFileSyncFileContentLines(fsMock);
+
+            expect(fileContentLines[1]).toEqual('export const INDEX = "/";');
+            expect(fileContentLines[2]).toEqual('export const DIR1 = "/dir1";');
+            expect(fileContentLines[3]).toEqual('export const DIR1__DIR1_1 = "/dir1/dir1-1";');
+            expect(fileContentLines[4]).toEqual('export const DIR2 = "/dir2";');
+            expect(fileContentLines[5]).toEqual('export const DIR2__DIR2_1 = "/dir2/dir2-1";');
+            expect(fileContentLines[6]).toEqual('export const DIR2__DIR2_1__DIR2_1_1 = "/dir2/dir2-1/dir2-1-1";');
+            expect(fileContentLines[7]).toEqual('export const DIR2__DIR2_2 = "/dir2/dir2-2";');
+            expect(fileContentLines[8]).toEqual('export const DIR2__DIR2_3 = "/dir2/dir2-3";');
+            expect(fileContentLines[9]).toEqual('export const DIR2__DIR2_3__DIR2_3_1 = "/dir2/dir2-3/dir2-3-1";');
+            expect(fileContentLines[10]).toEqual('export const DIR3 = "/dir3";');
+            expect(fileContentLines[11]).toEqual('export const DIR3__DIR3_1 = "/dir3/dir3-1";');
+            expect(fileContentLines[12]).toEqual('export const DIR3__DIR3_2 = "/dir3/dir3-2";');
+            expect(fileContentLines[13]).toEqual('export const DIR3__DIR3_2__DIR3_2_1 = "/dir3/dir3-2/dir3-2-1";');
+            expect(fileContentLines[14]).toBeUndefined();
+        });
+    });
 });
 
 /**
