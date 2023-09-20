@@ -3,28 +3,35 @@
 @tailwind utilities;
 
 :root {
+    --content-top-padding: 10px;
     --background-color: #26292e;
     --text-color: #aeaeae;
     --active-link-color: #fff400;
     --button-text-color: #fefefe;
     --button-border-color: #ffffff;
+    --section-seperator-color: #ffffff3d
 }
 
 body {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 270px 1fr;
     grid-template-areas: 'leftMenu appContent';
     color: var(--text-color);
     background: var(--background-color);
-    padding-top: 10px;
+    /*padding-top: 10px;*/
+    min-height: 100vh;
 }
 
 .left-menu-container {
     grid-area: leftMenu;
+    padding: var(--content-top-padding) 10px 0;
+    border-right: 2px solid var(--section-seperator-color);
 }
 
 .content-container {
     display: flex;
     flex-direction: column;
     grid-area: appContent;
+
+    padding: var(--content-top-padding) 10px 0 30px;
 }
