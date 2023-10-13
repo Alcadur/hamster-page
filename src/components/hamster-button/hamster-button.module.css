@@ -1,0 +1,32 @@
+.btn {
+    --active-background: var(--main-color);
+    --active-border-color: #ED5127;
+    --active-color: var(--hover-text-color);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid var(--main-color);
+    border-radius: 23px;
+    color: var(--main-color);
+    background-color: var(--white-background);
+    cursor: pointer;
+    box-shadow: 0 0 0 var(--main-color);
+    transition: box-shadow ease-in-out 250ms;
+}
+
+.btn:not(.btnActive):hover {
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.btn.btnActive {
+    padding-left: 13px;
+    padding-right: 13px;
+    color: var(--active-color);
+    background-color: var(--active-background);
+    border-color: var(--active-border-color);
+    border-radius: 20px 10px;
+}
