@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 :root {
+    --main-color: #EE5F38;
+    --white-background: #F3F3F3;
+    --hover-text-color: #F4F3F3;
+
     --content-top-padding: 10px;
     --background-color: #26292e;
     --text-color: #aeaeae;
