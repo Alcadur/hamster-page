@@ -1,0 +1,14 @@
+.buttonLabel {
+    display: none;
+    margin-left: 5px;
+}
+
+.activeButton .buttonLabel {
+    display: inline;
+}
+
+@media screen and (min-width: 765px) {
+    .buttonLabel {
+        display: inline;
+    }
+}
