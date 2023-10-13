@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "react-buddy-preview": "next dev -p 8989",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -18,7 +19,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "@react-buddy/ide-toolbox-next": "^2.4.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.3",
