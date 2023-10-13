@@ -7,8 +7,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px;
     border: 1px solid var(--main-color);
     border-radius: 23px;
     color: var(--main-color);
@@ -16,6 +15,7 @@
     cursor: pointer;
     box-shadow: 0 0 0 var(--main-color);
     transition: box-shadow ease-in-out 250ms;
+    line-height: 1em;
 }
 
 .btn:not(.btnActive):hover {

@@ -5,11 +5,12 @@ import classNames from 'classnames';
 /**
  * @param {JSX.Element} label
  * @param {boolean} isActive
+ * @param {string=''} className
  * @returns {JSX.Element}
  * @constructor
  */
-export default function HamsterButton({ children: label, isActive }) {
-    const classes = classNames(style.btn, headerFont.className, {
+export default function HamsterButton({ children: label, isActive, className = '' }) {
+    const classes = classNames(className, style.btn, headerFont.className, {
         [style.btnActive]: isActive
     });
 
