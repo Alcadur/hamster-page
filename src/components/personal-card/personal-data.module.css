@@ -1,0 +1,77 @@
+.personalCard {
+    --photoLeftRightMargin: 50px;
+    --photoSize: calc(100% - (2 * var(--photoLeftRightMargin)));
+
+    position: relative;
+    width: 330px;
+}
+
+.content {
+    width: 100%;
+    padding-left: 30px;
+    padding-top: calc(var(--photoSize)/2 + 30px);
+    color: black;
+    background-color: var(--white-background);
+    border: 1px solid var(--main-color);
+    border-radius: 25px;
+}
+
+.photo {
+    position: relative;
+    width: var(--photoSize);
+    height: 0;
+    left: var(--photoLeftRightMargin);
+    margin-bottom: calc(var(--photoSize)/2 * -1);
+    padding-bottom: var(--photoSize);
+    border: 1px solid var(--main-color);
+    background-color: var(--white-background);
+    border-radius: 50%;
+}
+
+.photo:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    --size: calc(100% - 18px - 18px);
+    display: block;
+    width: var(--size);
+    height: 0;
+    padding-bottom: var(--size);
+    background: url("/mr-bean.gif") no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.content h1 {
+    font-size: 32px;
+}
+
+.content h2 {
+    line-height: 1em;
+}
+
+.content h2,
+.content ul {
+    font-size: 20px;
+}
+
+.content h1,
+.content h2 {
+    text-align: center;
+}
+
+
+.content ul {
+    margin: 30px 0;
+}
+
+.content li {
+    margin-bottom: 5px;
+}
+
+.content li svg {
+    display: inline-block;
+    margin-right: 10px;
+}

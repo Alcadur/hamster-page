@@ -7,6 +7,7 @@ import { HomeButton } from '@/components/menu/home-button';
 import { AboutMeButton } from '@/components/menu/about-me-button';
 import { CvGeneratorButton } from '@/components/menu/cv-generator-button';
 import { Menu } from '@/components/menu/menu';
+import { PersonalCard } from '@/components/personal-card/personal-card';
 
 const ComponentPreviews = () => {
     return (
@@ -15,7 +16,6 @@ const ComponentPreviews = () => {
                 <HamsterButton>
                     <BiHomeSmile /> Home
                 </HamsterButton>
-
                 <HamsterButton isActive={true}>
                     <BiHomeSmile /> Home
                 </HamsterButton>
@@ -34,6 +34,9 @@ const ComponentPreviews = () => {
             </ComponentPreview>
             <ComponentPreview path="/Menu">
                 <Menu />
+            </ComponentPreview>
+            <ComponentPreview path="/PersonalCard">
+                <PersonalCard />
             </ComponentPreview>
         </Previews>
     );
