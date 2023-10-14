@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 :root {
     --main-color: #EE5F38;
     --white-background: #F3F3F3;
