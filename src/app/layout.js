@@ -1,8 +1,6 @@
 'use client';
 
 import './globals.css';
-import { TopMenu } from '@/components/top-menu/top-menu';
-import { LeftMenu } from '@/components/left-menu/left-menu';
 import { DevSupport } from '@react-buddy/ide-toolbox-next';
 import { ComponentPreviews, useInitial } from '@/dev';
 import { regularTextFont } from '@/utils/fonts';
@@ -20,10 +18,9 @@ export default function RootLayout({ children }) {
         <body className={font.className}>
         <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
             <section className="left-menu-container">
-                <LeftMenu />
+
             </section>
             <section className="content-container">
-                <TopMenu />
                 <section>
                     {children}
                 </section>
