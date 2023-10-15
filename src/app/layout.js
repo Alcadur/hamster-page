@@ -4,6 +4,7 @@ import './globals.css';
 import { DevSupport } from '@react-buddy/ide-toolbox-next';
 import { ComponentPreviews, useInitial } from '@/dev';
 import { regularTextFont } from '@/utils/fonts';
+import { Menu } from '@/components/menu/menu';
 
 const font = regularTextFont;
 
@@ -17,14 +18,12 @@ export default function RootLayout({ children }) {
         <html lang="en">
         <body className={font.className}>
         <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
-            <section className="left-menu-container">
-
-            </section>
-            <section className="content-container">
-                <section>
-                    {children}
-                </section>
-            </section>
+            <nav className="menu-container">
+                <Menu />
+            </nav>
+            <main className="content-container">
+                {children}
+            </main>
         </DevSupport>
         </body>
         </html>

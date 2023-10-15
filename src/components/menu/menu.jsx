@@ -3,9 +3,9 @@ import { AboutMeButton } from '@/components/menu/about-me-button';
 import { CvGeneratorButton } from '@/components/menu/cv-generator-button';
 
 export function Menu() {
-    return <nav>
+    return <>
         <HomeButton />
         <AboutMeButton />
         <CvGeneratorButton />
-    </nav>;
+    </>;
 }
