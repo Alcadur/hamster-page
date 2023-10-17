@@ -3,7 +3,7 @@
     --color: white;
     --size: 100px;
     --value: 100;
-    --animation-duration: 1000ms;
+    --animation-state: '';
     /************************/
 
     position: relative;
@@ -13,6 +13,7 @@
 
 .container svg {
     /*overwrite by inline variables*/
+    --animation-duration: 1000ms;
     --animation-bounce-step-1: var(--value);
     --animation-bounce-step-2: var(--value);
     --animation-bounce-step-3: var(--value);
@@ -31,7 +32,10 @@
     stroke-dasharray: var(--value), 100;
     transform-origin: center;
     transform: rotate(var(--rotate-by));
-    animation: progress var(--animation-duration) ease-out forwards;
+}
+
+.container .value.play {
+    animation: progress var(--animation-duration) forwards;
 }
 
 .container .label {
@@ -44,25 +48,16 @@
 }
 
 @keyframes progress {
-    0% {
-        stroke-dasharray: 0, 100;
+    0%  {
+        stroke-dasharray: var(--value), 100;
+    }
+    20% {
+        stroke-dasharray: var(--animation-bounce-step-2), 100;
     }
     40% {
         stroke-dasharray: var(--value), 100;
     }
-    50% {
-        stroke-dasharray: var(--animation-bounce-step-1), 100;
-    }
     60% {
-        stroke-dasharray: var(--value), 100;
-    }
-    70% {
-        stroke-dasharray: var(--animation-bounce-step-2), 100;
-    }
-    80% {
-        stroke-dasharray: var(--value), 100;
-    }
-    90% {
         stroke-dasharray: var(--animation-bounce-step-3), 100;
     }
     100% {

@@ -1,8 +1,10 @@
 import { act, render } from '@testing-library/react';
+
 import {
     ROUND_SKILL_LEVEL_ANIMATION_TIME_IN_MS,
     RoundSkillLevel
 } from '@/components/round-skill-level/round-skill-level';
+import { runTimersUntilQueueEmpty } from '@/utils/tests-utils';
 
 describe('RoundSkillLevel', function () {
 
@@ -42,6 +44,7 @@ describe('RoundSkillLevel', function () {
             const EXPECTED_STEP_3_VALUE = '0.94';
 
             const { renderResult } = prepare({ value });
+            runTimersUntilQueueEmpty();
             const svgComputedStyle = getComputedStyle(renderResult.getByTestId('svg-element'));
 
             expect(svgComputedStyle.getPropertyValue('--animation-bounce-step-1')).toEqual(EXPECTED_STEP_1_VALUE);
@@ -56,6 +59,9 @@ describe('RoundSkillLevel', function () {
             const EXPECTED_STEP_3_VALUE = '42.3';
 
             const { renderResult } = prepare({ value });
+
+            runTimersUntilQueueEmpty();
+
             const svgComputedStyle = getComputedStyle(renderResult.getByTestId('svg-element'));
 
             expect(svgComputedStyle.getPropertyValue('--animation-bounce-step-1')).toEqual(EXPECTED_STEP_1_VALUE);
@@ -70,6 +76,7 @@ describe('RoundSkillLevel', function () {
             const EXPECTED_STEP_3_VALUE = '87';
 
             const { renderResult } = prepare({ value });
+            runTimersUntilQueueEmpty();
             const svgComputedStyle = getComputedStyle(renderResult.getByTestId('svg-element'));
 
             expect(svgComputedStyle.getPropertyValue('--animation-bounce-step-1')).toEqual(EXPECTED_STEP_1_VALUE);
