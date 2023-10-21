@@ -1,0 +1,48 @@
+.homeContentRow {
+    display: grid;
+    grid-template-areas:
+            "chart   title"
+            "content content";
+    grid-template-columns: 58px calc(100% - 58px);
+    grid-row-gap: 15px;
+}
+
+.chart {
+    grid-area: chart;
+}
+
+.homeContentRow h1 {
+    grid-area: title;
+    margin-left: 20px;
+}
+
+.homeContentRow p {
+    grid-area: content;
+    text-align: justify;
+}
+
+@media screen and (min-width: 341px) {
+    .homeContentRow {
+        margin-left: var(--left-right-margin);
+        margin-right: var(--left-right-margin);
+    }
+}
+
+@media screen and (min-width: 930px){
+    .homeContentRow {
+        grid-template-areas:
+            "chart   title"
+            "chart content";
+
+        grid-template-columns: auto auto;
+        grid-row-gap: 15px;
+        grid-column-gap: 20px;
+        max-width: 570px;
+    }
+
+
+    .homeContentRow h1 {
+        margin-left: unset;
+        text-align: center;
+    }
+}

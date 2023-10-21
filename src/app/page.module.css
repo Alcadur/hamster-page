@@ -1,0 +1,44 @@
+.homeWrapper {
+    --chartSize: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: appContent;
+    align-self: center;
+}
+
+.homePersonalCard {
+    margin-bottom: 50px;
+}
+
+.dataContainer {
+    max-width: var(--max-mobile-width);
+}
+
+.dataRow:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+@media screen and (min-width: 930px) {
+    .homeWrapper {
+        --chartSize: 150px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0 25px 20px;
+        grid-template-areas: unset;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .homePersonalCard {
+        grid-area: personal-info;
+        margin-bottom: 0;
+    }
+
+    .dataContainer {
+        grid-area: data;
+        max-width: unset;
+    }
+}

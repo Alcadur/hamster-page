@@ -9,6 +9,7 @@ import { CvGeneratorButton } from '@/components/menu/cv-generator-button';
 import { Menu } from '@/components/menu/menu';
 import { PersonalCard } from '@/components/personal-card/personal-card';
 import { RoundSkillLevel } from '@/components/round-skill-level/round-skill-level';
+import { HomeContentRow } from '@/components/home-content-row/home-content-row';
 
 const ComponentPreviews = () => {
     return (
@@ -45,6 +46,9 @@ const ComponentPreviews = () => {
                 <RoundSkillLevel color='red' size='150px'>45</RoundSkillLevel>
                 <br/>
                 <RoundSkillLevel color='green' size='150px' rotateBy='89deg'>80</RoundSkillLevel>
+            </ComponentPreview>
+            <ComponentPreview path="/HomeContentRow">
+                <HomeContentRow />
             </ComponentPreview>
         </Previews>
     );
