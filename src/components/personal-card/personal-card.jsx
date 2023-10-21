@@ -4,10 +4,11 @@ import { headerFont } from '@/utils/fonts';
 import { ContactData } from '@/components/personal-card/contact-data';
 import { PersonalInfo } from '@/components/personal-card/personal-info';
 
-export function PersonalCard() {
+export function PersonalCard({ className }) {
+    const wrapperClasses = classNames(style.personalCard, className);
     const contentClasses = classNames(headerFont.className, style.content);
 
-    return <section className={style.personalCard}>
+    return <section className={wrapperClasses}>
         <div className={style.photo}></div>
         <div className={contentClasses}>
             <PersonalInfo />
