@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             <nav className="menu-container">
                 <Menu />
             </nav>
-            <main className="content-container">
+            <main className="main-container">
                 {children}
             </main>
         </DevSupport>
