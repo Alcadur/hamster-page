@@ -3,12 +3,13 @@
     --photoSize: calc(100% - (2 * var(--photoLeftRightMargin)));
 
     position: relative;
-    width: 330px;
+    width: calc(100% - var(--left-right-margin-sum));
+    max-width: 350px;
+    min-width: 300px;
 }
 
 .content {
     width: 100%;
-    padding-left: 30px;
     padding-top: calc(var(--photoSize)/2 + 30px);
     color: black;
     background-color: var(--white-background);
@@ -64,7 +65,7 @@
 
 
 .content ul {
-    margin: 30px 0;
+    margin: 30px;
 }
 
 .content li {
