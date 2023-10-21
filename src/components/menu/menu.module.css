@@ -1,14 +1,40 @@
+.button {
+    display: grid;
+    grid-template-areas: 'icon label';
+    grid-template-columns: 1em auto;
+}
+
+.buttonIcon {
+    grid-area: icon;
+}
+
 .buttonLabel {
+    grid-area: label;
     display: none;
     margin-left: 5px;
+}
+
+.menuButton {
+    margin: 0 10px 0 0;
 }
 
 .activeButton .buttonLabel {
     display: inline;
 }
 
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 667px) {
     .buttonLabel {
         display: inline;
+    }
+
+    .button {
+        padding-left: 10px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (min-width: 1098px) {
+    .menuButton {
+        margin: 0 0 20px 0;
     }
 }
