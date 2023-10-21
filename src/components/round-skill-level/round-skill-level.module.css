@@ -1,7 +1,7 @@
 .container {
     /*overwrite by inline variables*/
     --color: white;
-    --size: 100px;
+    --size: var(--chartSize, 100px);
     --value: 100;
     --animation-state: '';
     /************************/
