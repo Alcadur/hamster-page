@@ -2,6 +2,7 @@ import { BiPhoneCall } from 'react-icons/bi';
 import { BsMailbox } from 'react-icons/bs';
 import { GrLinkedinOption, GrMapLocation } from 'react-icons/gr';
 import { SiGithub } from 'react-icons/si';
+import { headerFont } from '@/utils/fonts';
 
 export function ContactData() {
     const contactData = [
@@ -19,9 +20,9 @@ export function ContactData() {
         },
     ];
 
-    return <ul>
-        {contactData.map(({ IconComponent, label }) =>
-            <li key={label}><IconComponent />{label}</li>
+    return <ul className={headerFont.className}>
+        {contactData.map(({ IconComponent, label }, index) =>
+            <li key={index}><IconComponent />{label}</li>
         )}
     </ul>;
 }
