@@ -3,7 +3,7 @@
 import './globals.css';
 import { DevSupport } from '@react-buddy/ide-toolbox-next';
 import { ComponentPreviews, useInitial } from '@/dev';
-import { regularTextFont } from '@/utils/fonts';
+import { headerFont, regularTextFont } from '@/utils/fonts';
 import { Menu } from '@/components/menu/menu';
 
 const font = regularTextFont;
@@ -16,6 +16,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+        <head>
+            <title>Hamster Web</title>
+            <style jsx global>{`
+              :root {
+                --header-font-family: ${headerFont.style.fontFamily};
+              }
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                font-family: var(--header-font-family)
+            }
+            `}</style>
+        </head>
         <body className={font.className}>
         <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
             <nav className="menu-container">
