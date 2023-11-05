@@ -1,0 +1,28 @@
+.wrapper {
+    margin-bottom: 30px;
+}
+
+.singleSkill {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 520px) {
+    .wrapper {
+        --gap: 60px;
+        --half-gap: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: var(--gap);
+    }
+
+    .singleSkill {
+        flex-basis: calc(50% - var(--half-gap));
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1439px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
