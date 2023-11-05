@@ -1,0 +1,77 @@
+.skillWrapper {
+    --level-wrapper-background: #374151;
+    --level-color: var(--main-color);
+
+    padding-bottom: 25px;
+}
+
+.levelWrapper {
+    --level-value: 80%;
+    width: 100%;
+    height: 16px;
+    padding: 3px;
+    border-radius: 8px;
+    background-color: var(--level-wrapper-background);
+}
+
+.levelBar {
+    width: var(--level-value);
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--level-color);
+}
+
+.levelValue {
+    position: relative;
+    width: var(--level-value);
+    padding-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: var(--main-color);
+    font-family: var(--header-font-family);
+    border-bottom: 1px solid;
+    line-height: 1em;
+}
+
+.levelHelpLineLeft,
+.levelHelpLineRight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.levelHelpLineLeft {
+    left: 0;
+    border-left: 1px dashed;
+}
+
+.levelHelpLineRight {
+    right: 0;
+    border-right: 1px dashed;
+}
+
+.levelHelpLineLeft::before,
+.levelHelpLineRight::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-width: 5px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.levelHelpLineLeft::before {
+    left: 0;
+    border-right-color: var(--main-color);
+    transform: translate(-52%, 52%);
+}
+
+.levelHelpLineRight::before {
+    right: 0;
+    border-left-color: var(--main-color);
+    transform: translate(52%, 52%);
+}
