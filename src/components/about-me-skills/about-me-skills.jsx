@@ -1,12 +1,13 @@
 import { Skill } from '@/components/skill/skill';
 import style from './about-me-skills.module.css';
+import { allSkillsByKey } from '@/data/skillsUtils';
 
 export function AboutMeSkills() {
     const skills = [
-        { name: 'JavaScript', level: 90 },
-        { name: 'CSS', level: 80 },
-        { name: 'HTML', level: 70 },
-        { name: 'React', level: 96 },
+        allSkillsByKey.javaScript,
+        allSkillsByKey.css,
+        allSkillsByKey.html,
+        allSkillsByKey.react,
     ];
 
     return <section className={style.wrapper}>

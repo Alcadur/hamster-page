@@ -1,0 +1,23 @@
+[
+  {
+    "name": "JavaScript",
+    "level": 90
+  },
+  {
+    "name": "CSS",
+    "level": 85
+  },
+  {
+    "name": "HTML",
+    "level": 85
+  },
+  {
+    "name": "React",
+    "level": 80
+  },
+  {
+    "name": "Docker",
+    "level": 40
+  }
+]
+
