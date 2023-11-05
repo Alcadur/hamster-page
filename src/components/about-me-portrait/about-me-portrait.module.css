@@ -1,0 +1,40 @@
+.wrapper {
+    position: relative;
+    max-width: 436px;
+    max-height: 584px;
+    /*padding: 21px;*/
+    border: 1px solid var(--main-color);
+    border-radius: 25px;
+    background-color: var(--white-background);
+
+    order: 0;
+    width: calc(100% - var(--left-right-margin-sum));
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.imageContainer {
+    --imageMargin: 21px;
+    position: absolute;
+    top: var(--imageMargin);
+    right: var(--imageMargin);
+    bottom: var(--imageMargin);
+    left: var(--imageMargin);
+
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+@media (min-width: 520px) {
+    .wrapper {
+        width: 80%;
+        padding-bottom: min(80%, 468px);
+    }
+}
+
+@media (min-width: 900px) {
+    .wrapper {
+        grid-area: photo;
+        justify-self: end;
+    }
+}

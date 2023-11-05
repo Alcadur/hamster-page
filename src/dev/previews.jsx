@@ -10,6 +10,7 @@ import { Menu } from '@/components/menu/menu';
 import { PersonalCard } from '@/components/personal-card/personal-card';
 import { RoundSkillLevel } from '@/components/round-skill-level/round-skill-level';
 import { HomeContentRow } from '@/components/home-content-row/home-content-row';
+import { AboutMePortrait } from '@/components/about-me-portrait/about-me-portrait';
 
 const ComponentPreviews = () => {
     return (
@@ -49,6 +50,9 @@ const ComponentPreviews = () => {
             </ComponentPreview>
             <ComponentPreview path="/HomeContentRow">
                 <HomeContentRow />
+            </ComponentPreview>
+            <ComponentPreview path="/AboutMePortrait">
+                <AboutMePortrait />
             </ComponentPreview>
         </Previews>
     );
