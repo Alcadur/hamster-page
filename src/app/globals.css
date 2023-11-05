@@ -15,21 +15,29 @@
     --left-right-margin: 15px;
     --left-right-margin-sum: 30px;
 
-    --max-mobile-width: 395px
+    --max-mobile-width: 395px;
+
+    /*overrides in layout style*/
+    --header-font-family: '';
 }
 
 body {
-    max-width: 1350px;
+    max-width: 1440px;
     min-height: 100vh;
     margin: 0 auto;
     font-size: 20px;
     color: var(--text-color);
     background: var(--background-color);
+    padding-bottom: 34px;
 }
 
 h1 {
     font-size: 48px;
     line-height: 1em;
+}
+
+p {
+    text-align: justify;
 }
 
 .menu-container {
