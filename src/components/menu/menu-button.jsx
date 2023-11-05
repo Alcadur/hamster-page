@@ -23,7 +23,7 @@ export function MenuButton({ IconComponent, label, route }) {
         }
     );
 
-    return <HamsterButton isActive={isActive} className={className} href={path} tag="link">
+    return <HamsterButton isActive={isActive} className={className} href={route} tag="link">
         <IconComponent className={style.buttonIcon} />
         <span className={style.buttonLabel}>{label}</span>
     </HamsterButton>;
