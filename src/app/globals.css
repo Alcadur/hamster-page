@@ -76,6 +76,7 @@ p {
     body {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     .menu-container {
