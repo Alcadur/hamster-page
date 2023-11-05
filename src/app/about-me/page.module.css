@@ -1,0 +1,58 @@
+.aboutMeWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+    margin: 0 var(--left-right-margin-sum);
+}
+
+.aboutMeWrapper h1 {
+    margin-bottom: 20px;
+}
+
+.aboutMeWrapper  p {
+    margin-bottom: 10px;
+}
+
+.skillsContainer {
+    order: 1;
+    width: 100%;
+}
+
+.skillsButton {
+    margin: 0 auto;
+}
+
+.storyWrapper {
+    order: 2;
+}
+
+@media (min-width: 900px) {
+    .aboutMeWrapper {
+        display: grid;
+        grid-template-areas:
+            "skills photo"
+            "story  story";
+        align-items: start;
+        grid-template-columns: 0.7fr 1fr;
+        grid-template-rows: max-content;
+    }
+
+    .skillsContainer {
+        grid-area: skills;
+    }
+
+    .storyWrapper {
+        grid-area: story;
+    }
+}
+
+@media (min-width: 1440px) {
+    .aboutMeWrapper {
+        grid-template:
+            "story  photo"
+            "skills skills";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content;
+    }
+}
